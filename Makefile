@@ -43,6 +43,7 @@ install:
 	mkdir -p ${PREFIX}/blodwen/support/chez
 	mkdir -p ${PREFIX}/blodwen/support/chicken
 	mkdir -p ${PREFIX}/blodwen/support/racket
+# TODO Add Agda backend here
 	make -C prelude install BLODWEN=../blodwen
 	make -C base install BLODWEN=../blodwen
 
