@@ -67,6 +67,7 @@ compileExpr c tm outfile
          Right () <- coreLift $ writeFile outfile outn
             | Left err => throw (FileErr outfile err)
          coreLift $ chmod outfile 0o755
+         coreLift $ putStrLn "Dummy Agda Backend reporting"
          pure (Just outfile)
          -- compileToRKT c tm outn
          -- raco <- coreLift findRacoExe
@@ -76,6 +77,7 @@ executeExpr : Ref Ctxt Defs -> ClosedTerm -> Core annot ()
 executeExpr c tm
     = do tmp <- coreLift $ tmpName
 --         throw (InternalError ("Can't output Agda code yet."))
+         coreLift $ putStrLn "Dummy Agda Backend reporting"
          pure ()
       -- do tmp <- coreLift $ tmpName
       --    let outn = tmp ++ ".rkt"
